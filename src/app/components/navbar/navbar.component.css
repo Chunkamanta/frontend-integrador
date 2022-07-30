@@ -2,6 +2,14 @@ div {
     background-color: #a1a1a1 ;
 }
 
+.navbar {
+    padding-top: 0% ;
+}
+
+.icon {
+    padding: 10px ;
+}
+
 #logoAP{
     width: 100px;
 }
