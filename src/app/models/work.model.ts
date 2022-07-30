@@ -1,4 +1,4 @@
-export interface Experience {
+export interface Work {
     id: number;
     position: string;
     institution: string;

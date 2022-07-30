@@ -23,16 +23,21 @@ export class EducationService {
     getEducation(): Observable<Education[]> {
         return this.http.get<Education[]>(this.baseUrl, { headers: httpOptions.headers });
     }
+
+    getEducationById(id:number): Observable<Education> {
+        return this.http.get<Education>(`${this.baseUrl}/${id}`, { headers: httpOptions.headers });
+    }
+
     /* configuracion metodo post */
-    postEducation(): Observable<Education[]> {
-        return this.http.post<Education[]>(this.baseUrl, { headers: httpOptions.headers });
+    postEducation(data: Education): Observable<Education> {
+        return this.http.post<Education>(this.baseUrl, data, { headers: httpOptions.headers });
       }
       /* configuracion metodo put */
-    putEducation(): Observable<Education[]> {
-        return this.http.put<Education[]>(this.baseUrl, { headers: httpOptions.headers });
+    putEducation(data: Education): Observable<Education> {
+        return this.http.put<Education>(this.baseUrl, data, { headers: httpOptions.headers });
     }
     /* configuracion metodo delete */
-    deleteEducation(): Observable<Education[]> {
-        return this.http.delete<Education[]>(this.baseUrl, { headers: httpOptions.headers });
+    deleteEducation(id: number): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/${id}`, { headers: httpOptions.headers });
     }
 }

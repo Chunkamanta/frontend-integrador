@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs';
-import { Experience } from 'src/app/models/experience.model'
+import { Work } from 'src/app/models/work.model'
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -20,19 +20,24 @@ export class ExperienceService {
     constructor(private http: HttpClient) {}
 
     /* configuracion metodo GET */
-    getExperience(): Observable<Experience[]> {
-        return this.http.get<Experience[]>(this.baseUrl, { headers: httpOptions.headers });
+    getWorks(): Observable<Work[]> {
+        return this.http.get<Work[]>(this.baseUrl, { headers: httpOptions.headers });
     }
+
+    getWorkById(id:number): Observable<Work> {
+        return this.http.get<Work>(`${this.baseUrl}/${id}`, { headers: httpOptions.headers }) ;
+    }
+
     /* configuracion metodo post */
-    postExperience(): Observable<Experience[]> {
-        return this.http.post<Experience[]>(this.baseUrl, { headers: httpOptions.headers });
+    postWork(data:Work): Observable<Work> {
+        return this.http.post<Work>(this.baseUrl, data, { headers: httpOptions.headers });
       }
       /* configuracion metodo put */
-    putExperience(): Observable<Experience[]> {
-        return this.http.put<Experience[]>(this.baseUrl, { headers: httpOptions.headers });
+    putWork(data:Work): Observable<Work> {
+        return this.http.put<Work>(this.baseUrl, data, { headers: httpOptions.headers });
     }
     /* configuracion metodo delete */
-    deleteExperience(): Observable<Experience[]> {
-        return this.http.delete<Experience[]>(this.baseUrl, { headers: httpOptions.headers });
+    deleteWork(id:number): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/${id}`, { headers: httpOptions.headers });
     }
 }
