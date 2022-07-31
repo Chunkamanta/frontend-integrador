@@ -6,7 +6,7 @@
 }
 
 .bg-img {
-	background: url("../../../assets/login1.jpg");
+	background: url("../../../assets/fondo\ login.png");
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -108,6 +108,16 @@
 	text-decoration: underline;
   }
   
+  .fa fa-user {
+	margin-left: auto; 
+	margin-right:auto;
+	}
+
+  .pass-key{
+	margin-left: auto; 
+	margin-right: auto;
+	}
+
   .field input[type="submit"] {
 	background: #2eccfc;
 	border: 1px solid #41b8fd;
