@@ -14,7 +14,7 @@ const httpOptions = {
     providedIn: 'root',
 })
 
-export class ExperienceService {
+export class WorksService {
     baseUrl = '';
 
     constructor(private http: HttpClient) {}
