@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  banner: string = 'assets/fondo_login_erp_2.jpg'
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }
